@@ -19,6 +19,7 @@ public class VisitingCardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.visiting_card);
 
@@ -65,4 +66,11 @@ public class VisitingCardActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        super.onPause();
+    }
+
 }

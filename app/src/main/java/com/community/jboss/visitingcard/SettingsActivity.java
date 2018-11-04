@@ -21,9 +21,16 @@ import android.support.v7.app.AppCompatActivity;
 public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         super.onCreate(savedInstanceState);
         getSupportFragmentManager().beginTransaction()
                 .add(android.R.id.content, new SettingsFragment()).commit();
+    }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        super.onPause();
     }
 
 }

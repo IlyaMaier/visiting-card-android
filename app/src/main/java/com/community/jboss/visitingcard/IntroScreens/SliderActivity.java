@@ -15,6 +15,7 @@ public class SliderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
@@ -40,4 +41,11 @@ public class SliderActivity extends AppCompatActivity {
         // TODO: if you're creating an Adapter for the ViewPager create it in the same Package and name it as SlideAdapter
 
     }
+
+    @Override
+    protected void onPause() {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        super.onPause();
+    }
+
 }
