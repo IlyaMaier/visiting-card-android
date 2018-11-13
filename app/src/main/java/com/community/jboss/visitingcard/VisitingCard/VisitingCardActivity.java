@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.community.jboss.visitingcard.LoginActivity;
 import com.community.jboss.visitingcard.Maps.MapsActivity;
+import com.community.jboss.visitingcard.Maps.MapsActivity2;
 import com.community.jboss.visitingcard.R;
 import com.community.jboss.visitingcard.SettingsActivity;
 
@@ -38,7 +39,7 @@ public class VisitingCardActivity extends AppCompatActivity {
                         .setAction("Yes", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent toVisitingCard = new Intent(VisitingCardActivity.this, MapsActivity.class);
+                                Intent toVisitingCard = new Intent(VisitingCardActivity.this, MapsActivity2.class);
                                 startActivity(toVisitingCard);
                             }
                         }).show();
