@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_organization"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About.OrganizationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/jboss_logo"
+            android:src="@drawable/jboss" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/github"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:contentDescription="@string/github"
+                android:src="@drawable/ic_github" />
+
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/twitter"
+                android:src="@drawable/ic_twitter" />
+
+            <ImageView
+                android:id="@+id/gitter"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:contentDescription="@string/gitter"
+                android:src="@drawable/ic_gitter" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_fragment_organization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="32dp"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    
+</ScrollView>

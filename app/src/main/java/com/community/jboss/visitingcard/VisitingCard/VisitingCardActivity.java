@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.community.jboss.visitingcard.About.AboutActivity;
 import com.community.jboss.visitingcard.LoginActivity;
 import com.community.jboss.visitingcard.Maps.MapsActivity;
 import com.community.jboss.visitingcard.R;
@@ -60,6 +61,10 @@ public class VisitingCardActivity extends AppCompatActivity {
             case R.id.settings:
                 Intent intent = new Intent(VisitingCardActivity.this, SettingsActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.about:
+                Intent i = new Intent(VisitingCardActivity.this, AboutActivity.class);
+                startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
