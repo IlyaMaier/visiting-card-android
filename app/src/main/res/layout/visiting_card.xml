@@ -1,124 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.c1om/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".visitingcard.VisitingCardActivity">
-    tools:context=".VisitingCard.VisitingCardActivity"
     android:gravity="center"
-    android:orientation="vertical"
-    android:weightSum="100">
-
-    <!--
-      TODO: Add profileImage - ImageView ; {Name, Email, PhoneNumber, Github, LinkedIn & Twitter Fields} - EditText
-    -->
+    tools:context=".visitingcard.VisitingCardActivity">
 
     <android.support.v7.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="90"
+        android:layout_height="480dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginRight="40dp"
         android:elevation="30dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        tools:targetApi="lollipop">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:background="@drawable/card_bg"
+                android:orientation="vertical"
                 android:weightSum="100">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_marginEnd="60dp"
+                    android:layout_weight="25"
                     android:gravity="center"
-                    android:layout_marginRight="60dp"
-                    android:layout_weight="25">
+                    android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/profile_img"
-                        android:onClick="select_img"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/man"/>
-                    <TextView
+                        android:onClick="mSelectImg"
+                        android:src="@drawable/man" />
+
+                    <EditText
+                        android:id="@+id/et_name_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="#fff"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-smallcaps"
+                        android:hint="@string/name"
+                        android:inputType="textPersonName"
                         android:textAlignment="center"
-                        android:text="Name Here"
-                        android:layout_marginTop="10dp"/>
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="left"
-                    android:layout_marginLeft="40dp"
-                    android:layout_weight="20"
-                    android:layout_marginTop="15dp">
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="20"
+                        android:gravity="start"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/call"
-                            android:padding="5dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:textSize="15sp"
-                            android:textColor="#000"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textAlignment="center"
-                            android:text="xxx-xxxx-xxx"
-                            android:layout_marginLeft="10dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/mail"/>
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:padding="5dp"
+                                android:src="@drawable/call" />
+
+                            <EditText
+                                android:id="@+id/et_number_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="sans-serif-smallcaps"
+                                android:hint="@string/number"
+                                android:inputType="number"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textColor="#000"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:textSize="15sp"
-                            android:textColor="#000"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textAlignment="center"
-                            android:text="email@domain.com"
-                            android:layout_marginLeft="10dp"/>
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:padding="5dp"
+                                android:src="@drawable/mail" />
+
+                            <EditText
+                                android:id="@+id/et_email_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="sans-serif-smallcaps"
+                                android:hint="@string/email"
+                                android:inputType="textEmailAddress"
+                                android:padding="5dp"
+                                android:textAlignment="center"
+                                android:textColor="#000"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
+
             <LinearLayout
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="left"
-                android:layout_marginLeft="40dp">
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="start"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -128,19 +147,24 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/linkedin"
-                        android:padding="5dp"/>
-                    <TextView
+                        android:padding="5dp"
+                        android:src="@drawable/linkedin" />
+
+                    <EditText
+                        android:id="@+id/et_linkedin_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textSize="15sp"
-                        android:textColor="#fff"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="sans-serif-smallcaps"
+                        android:hint="@string/linkedin"
+                        android:inputType="textUri"
+                        android:padding="5dp"
                         android:textAlignment="center"
-                        android:text="www.linkedin.com/xxxxx"
-                        android:layout_marginLeft="10dp"/>
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -150,19 +174,23 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:padding="5dp"
-                        android:src="@drawable/twitter"/>
-                    <TextView
+                        android:src="@drawable/twitter" />
+
+                    <EditText
+                        android:id="@+id/et_twitter_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textSize="15sp"
-                        android:textColor="#fff"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="sans-serif-smallcaps"
+                        android:hint="@string/twitter"
+                        android:inputType="textUri"
+                        android:padding="5dp"
                         android:textAlignment="center"
-                        android:text="www.twitter.com/xxxxx"
-                        android:layout_marginLeft="10dp"/>
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -172,43 +200,51 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:padding="5dp"
-                        android:src="@drawable/git"/>
-                    <TextView
+                        android:src="@drawable/git" />
+
+                    <EditText
+                        android:id="@+id/et_github_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textSize="15sp"
-                        android:textColor="#fff"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="sans-serif-smallcaps"
+                        android:hint="@string/github"
+                        android:inputType="textUri"
+                        android:padding="5dp"
                         android:textAlignment="center"
-                        android:text="www.github.com/xxxxx"
-                        android:layout_marginLeft="10dp"/>
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
+
             </LinearLayout>
+
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_below="@+id/card"
+        android:id="@+id/fab_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="20"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:soundEffectsEnabled="true"
+        android:src="@drawable/ic_save_white_24dp"
+        app:elevation="17dp"
+        app:layout_anchor="@+id/include"
+        app:rippleColor="@color/colorAccent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:soundEffectsEnabled="true"
         android:src="@drawable/ic_arrow_forward_black_24dp"
         app:elevation="17dp"
-        app:fabSize="normal"
         app:layout_anchor="@+id/include"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:rippleColor="@color/colorAccent" />
 
-</LinearLayout>
+</FrameLayout>
